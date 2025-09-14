@@ -1,0 +1,287 @@
+@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  user-select: none;
+}
+
+h1,
+h2 {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+p {
+  user-select: none;
+}
+
+input,
+textarea {
+  user-select: text;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  font-family: Geist, "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.home {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: center;
+  height: 10%;
+  width: 100%;
+}
+
+.home img {
+  width: auto;
+  height: 30px;
+}
+
+.home-banner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  width: 100%;
+  text-align: center;
+  color: white;
+  gap: 20px;
+  padding: 0 20px;
+}
+
+.home-banner h1 {
+  font-family: Geist;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 24px;
+  line-height: 100%;
+  letter-spacing: -3%;
+  text-align: center;
+  color: #ffffff;
+}
+
+.home-banner h1 span {
+  font-family: Rouge Script;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 37.5px;
+  line-height: 100%;
+  letter-spacing: -3%;
+  text-align: center;
+  margin-left: 4px;
+}
+
+.home-banner h2 {
+  font-family: Geist;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 54px;
+  line-height: 100%;
+  letter-spacing: -3%;
+  text-align: center;
+  color: #ffffff;
+  margin-top: -16px;
+}
+
+.home-banner h2 span {
+  font-family: Geist;
+  font-weight: 600;
+  font-style: SemiBold;
+  font-size: 54px;
+  line-height: 100%;
+  letter-spacing: -3%;
+  color: #ad72ff;
+  margin-top: -10px;
+  text-align: center;
+}
+
+.home-banner h3 {
+  font-family: Geist;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0%;
+  text-align: center;
+  color: #ffffff99;
+  width: 30%;
+  margin: 10px 0px;
+}
+
+.email-container {
+  background-color: rgb(255, 255, 255, 0.1);
+  width: 325.5px;
+  height: 45px;
+  border-radius: 7499.25px;
+  border-width: 0.75px;
+  border-color: #787878;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5px;
+}
+
+.email-container input {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: white;
+  font-family: Geist;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 14px;
+  line-height: 150%;
+  letter-spacing: 0%;
+  width: 70%;
+  height: 80%;
+  padding: 0 10px;
+  background: transparent;
+  border: none;
+  outline: none;
+  background: transparent !important;
+  color: white !important;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 1000px transparent inset !important;
+  box-shadow: 0 0 0 1000px transparent inset !important;
+  -webkit-text-fill-color: white !important; /* keep text white */
+  caret-color: white; /* blinking cursor stays white */
+  background: transparent !important;
+  transition: background-color 9999s ease-in-out 0s !important;
+}
+
+input::placeholder {
+  color: rgba(255, 255, 255, 0.6); 
+}
+
+.email-container button {
+  width: 116.25px;
+  height: 35.25px;
+  gap: 7.5px;
+  border-radius: 7499.25px;
+  padding: 7.5px;
+  background-color: #6a00ff;
+  cursor: pointer;
+  opacity: 100%;
+  font-weight: 500;
+  font-family: Geist;
+  font-style: Medium;
+  font-size: 13.5px;
+  line-height: 100%;
+  letter-spacing: -3%;
+  text-align: center;
+}
+
+.home-footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 15%;
+  width: 100%;
+  gap: 10%;
+}
+
+.home-footer h1 {
+  font-family: Geist;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 18px;
+  line-height: 100%;
+  letter-spacing: -2%;
+  color: #ffffff99;
+}
+
+/* //////////////// MOBILE ............................. */
+@media (max-width: 640px) {
+  .home img {
+    width: auto;
+    height: 24px;
+  }
+
+  .home-banner h1{
+    font-size: 18px;
+  }
+
+  .home-banner h1 span {
+    font-size: 24px;
+  }
+
+  .home-banner h2 {
+    font-size: 36px;
+    margin-top: -9px;
+  }
+
+  .home-banner h2 span {
+    font-size: 36px;
+  }
+
+  .home-banner h3 {
+    font-size: 14px;
+    width: 80%;
+    margin: 0px 0px;
+    
+  }
+
+  .home-banner .email-container {
+    width: 297px;
+    height: 48px;
+    background-color: rgb(255, 255, 255, 0.1);
+  }
+
+
+  .home-footer h1 {
+    font-size: 14px;
+  }
+
+  .home-banner p{
+    font-size: 14px;
+  }
+
+}
+
+/* //////////////// TABLET ............................. */
+/* Tablet (641px – 1024px) */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .home-banner h3{
+    width: 57%;
+  }
+  
+}
