@@ -9,6 +9,7 @@ function Home() {
   const [showModal, setShowModal] = useState(false);
   const [email, setEmail] = useState("");
   const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false); // 👈 Loading state
 
   const handleSubmit = async () => {
     setError("");
@@ -17,6 +18,8 @@ function Home() {
       setError("Invalid email address");
       return;
     }
+
+    setLoading(true); // 👈 Start loading
 
     try {
       const response = await fetch(
@@ -40,6 +43,8 @@ function Home() {
       }
     } catch {
       setError("Server error. Please try again later.");
+    } finally {
+      setLoading(false); // 👈 Stop loading
     }
   };
 
@@ -55,7 +60,7 @@ function Home() {
         color="#692f9bff"
         noiseIntensity={0}
         rotation={0}
-        opacity={0.4} // 👈 opacity control
+        opacity={0.4}
         style={{
           position: "absolute",
           top: 0,
@@ -97,7 +102,15 @@ function Home() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
-            <button onClick={handleSubmit}>Get Notified</button>
+            <button onClick={handleSubmit} disabled={loading}>
+              {loading ? (
+                <span style={{ display: "flex", alignItems: "center",justifyContent: "center" }}>
+                  <span className="spinner"></span>
+                </span>
+              ) : (
+                "Get Notified"
+              )}
+            </button>
           </div>
 
           {/* Error Message */}
@@ -107,7 +120,9 @@ function Home() {
         {/* Footer */}
         <div className="home-footer">
           <h1>Follow us on</h1>
-          <a href="https://www.linkedin.com/company/valido-hiring/" target="blank"><IoLogoLinkedin size={24} color="#fff" /></a>
+          <a href="https://www.linkedin.com/company/valido-hiring/" target="blank">
+            <IoLogoLinkedin size={24} color="#fff" />
+          </a>
         </div>
       </div>
 
